@@ -1,3 +1,5 @@
+EDIT: I'm very sorry for their loss, they must be struggling right now. My condolences ❤️
+
 Medal's LuaU decompiler
 
 All credits to this project goes to in honor and memory of:
