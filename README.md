@@ -11,3 +11,5 @@ does not go in vain.
 
 Keep the Singh and Pedersen family in you guys prayers.
 We love you both.
+
+EDIT: planing on improving medal
