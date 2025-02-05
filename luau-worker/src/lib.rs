@@ -27,15 +27,15 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
     let router = Router::new();
     router
         .get_async("/decompile_ws", |req, _ctx| async move {
-            let license = req
-                .headers()
-                .get("Authorization")
-                .unwrap_or_default()
-                .expect("authorization header is required");
+            //let license = req
+            //    .headers()
+            //    .get("Authorization")
+            //    .unwrap_or_default()
+            //    .expect("authorization header is required");
 
-            if license != AUTH_SECRET {
-                return Response::error("invalid license", 403);
-            }
+            //if license != AUTH_SECRET {
+            //    return Response::error("invalid license", 403);
+            //}
 
             let pair = WebSocketPair::new()?;
             let server = pair.server;
@@ -67,15 +67,15 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
             Response::from_websocket(pair.client)
         })
         .post_async("/decompile", |mut req, _ctx| async move {
-            let license = req
-                .headers()
-                .get("Authorization")
-                .unwrap_or_default()
-                .expect("authorization header is required");
+            //let license = req
+            //    .headers()
+            //    .get("Authorization")
+            //    .unwrap_or_default()
+            //    .expect("authorization header is required");
 
-            if license != AUTH_SECRET {
-                return Response::error("invalid license", 403);
-            }
+            //if license != AUTH_SECRET {
+            //    return Response::error("invalid license", 403);
+            //}
 
             let encoded_bytecode = req.bytes().await?;
             match BASE64_STANDARD.decode(encoded_bytecode) {
